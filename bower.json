@@ -1,0 +1,21 @@
+{
+  "name": "angular2-skeleton",
+  "description": "",
+  "main": "",
+  "authors": [
+    "\"Zach Baum and Kyle Fisher\""
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Lazuli42/music-store-angular",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
