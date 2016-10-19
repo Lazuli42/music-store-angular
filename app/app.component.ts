@@ -6,6 +6,9 @@ import {Album} from './album.model';
   template: `
     <div class="container">
       <h1>Music Store</h1>
+      <album-display
+      [childAlbumList]="masterAlbumList">
+      </album-display>
     </div>
   `
 })
