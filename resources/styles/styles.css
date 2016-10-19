@@ -1,0 +1,23 @@
+.jumbotron {
+  background-color: #7f8faa;
+  min-height: 300px;
+  padding-top: 5px;
+  font-size: 1.6em;
+}
+
+body {
+  font-family: "Avenir Next";
+}
+
+#cart {
+  color: white;
+  margin-right: 2%;
+}
+
+.cart {
+  color: white;
+}
+
+#cart-albums {
+  text-align: left;
+}

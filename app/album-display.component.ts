@@ -11,6 +11,7 @@ import {Album} from './album.model';
       <option value="Rural">Rural</option>
       <option value="Soft Touch">Soft Touch</option>
       <option value="World Music">World Music</option>
+      <option value="Cityjam">Cityjam</option>
     </select>
 
     <select (change)="filterByArtist($event.target.value)">
@@ -24,13 +25,13 @@ import {Album} from './album.model';
       <option value="DuPaul">DuPaul</option>
     </select>
 
-    <div *ngFor="let album of childAlbumList | genreFilter:selectedGenre | artistFilter:selectedArtist">
-      <h4>$ {{album.price}} | <b>{{album.name}} | </b> by {{album.artist}} |  #{{album.genre}}</h4>
-    </div>
+    <div *ngFor="let currentAlbum of childAlbumList | genreFilter:selectedGenre | artistFilter:selectedArtist">
 
+      <album [album]="currentAlbum"></album>
+    </div>
   `
 })
-
+// the childAlbumList is an input - we get it from app.component. and is what allows us to cycle through the "for loop" above.
 export class AlbumDisplayComponent {
   @Input() childAlbumList: Album[];
   @Output() albumDisplayEmitter = new EventEmitter();
@@ -38,10 +39,8 @@ export class AlbumDisplayComponent {
   public selectedGenre: string = "All";
   filterByGenre(clickedGenre) {
     this.selectedGenre = clickedGenre;
-    console.log(clickedGenre);
   }
   filterByArtist(clickedArtist) {
     this.selectedArtist = clickedArtist;
-    console.log(clickedArtist);
   }
 }
