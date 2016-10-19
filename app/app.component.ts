@@ -7,8 +7,8 @@ import {Album} from './album.model';
     <div class="container">
       <h1>Music Store</h1>
       <album-display
-      [childAlbumList]="masterAlbumList">
-      </album-display>
+      [childAlbumList]="masterAlbumList" (albumDisplayEmitter)="showGenre($event)"
+      ></album-display>
     </div>
   `
 })
@@ -23,4 +23,9 @@ export class AppComponent {
     new Album("In the Club", "Armani Bangengson", 15, "Rural"),
     new Album("Clusterfunk", "DuPaul", 19, "Post-Neo Funk")
   ];
+  public selectedGenre: string = null;
+  showGenre(clickedGenre: string) {
+    this.selectedGenre = clickedGenre;
+    console.log(clickedGenre);
+  }
 }
