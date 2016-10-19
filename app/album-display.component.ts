@@ -25,7 +25,7 @@ import {Album} from './album.model';
       <option value="DuPaul">DuPaul</option>
     </select>
 
-    <div *ngFor="let currentAlbum of childAlbumList | genreFilter:selectedGenre | artistFilter:selectedArtist">
+    <div *ngFor="let currentAlbum of childAlbumList | genreFilter:selectedGenre | artistFilter:selectedArtist"  id="master-list">
 
       <album [album]="currentAlbum"></album>
     </div>

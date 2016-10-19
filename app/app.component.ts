@@ -5,7 +5,7 @@ import { Album } from './album.model';
   selector: 'my-app',
   template: `
     <div class="container">
-      <h1>Music Store</h1>
+      <h1 id="header">Music Store</h1>
       <album-display
       [childAlbumList]="masterAlbumList"
       (albumDisplayEmitter)="displaySelectedThing($event)"
