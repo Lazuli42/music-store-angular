@@ -4,6 +4,7 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent }   from './app.component';
 import { AlbumDisplayComponent } from './album-display.component';
 import { GenreFilterPipe } from './genre-filter.pipe';
+import { ArtistFilterPipe } from './artist-filter.pipe';
 
 
 @NgModule({
@@ -17,8 +18,9 @@ import { GenreFilterPipe } from './genre-filter.pipe';
     AppComponent,
     AlbumDisplayComponent,
     GenreFilterPipe,
+    ArtistFilterPipe
   ],
-  
+
   bootstrap: [AppComponent]
 })
 

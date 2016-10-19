@@ -21,7 +21,8 @@ export class AppComponent {
     new Album("Porch Jam", "Jeb Barton III", 13, "Rural"),
     new Album("Ragefist", "Brawlfook", 18, "Soft Touch"),
     new Album("In the Club", "Armani Bangengson", 15, "Rural"),
-    new Album("Clusterfunk", "DuPaul", 19, "Post-Neo Funk")
+    new Album("Clusterfunk", "DuPaul", 19, "Post-Neo Funk"),
+    new Album("Mustardfunk", "DuPaul", 22, "Post-Neo Funk")
   ];
   public selectedGenre: string = null;
   showGenre(clickedGenre: string) {
