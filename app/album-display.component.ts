@@ -25,7 +25,19 @@ import {Album} from './album.model';
       <option value="DuPaul">DuPaul</option>
     </select>
 
-    <div *ngFor="let currentAlbum of childAlbumList | genreFilter:selectedGenre | artistFilter:selectedArtist"  id="master-list">
+    <label for = "sortByProperty">Sort by:
+      <select (change)="sortByProperty($event.target.value)">
+        <option value="alphaLowHigh">a-z</option>
+        <option value="alphaHighLow">z-a</option>
+        <option value="priceHighLow">$:low->high</option>
+        <option value="priceLowHigh">$:low->high</option>
+      </select>
+    </label>
+
+    <label for="maxPrice">Max Price</label>
+    <input (change)="setBudget($event.target.value)" type="number" name="maxPrice">
+
+    <div *ngFor="let currentAlbum of childAlbumList | genreFilter:selectedGenre | artistFilter:selectedArtist | priceFilter:budget | orderBy:propertyToSort:name"  id="master-list">
 
       <album [album]="currentAlbum"></album>
     </div>
@@ -37,10 +49,19 @@ export class AlbumDisplayComponent {
   @Output() albumDisplayEmitter = new EventEmitter();
   public selectedArtist: string = "All";
   public selectedGenre: string = "All";
+  public budget: number;
+  public propertyToSort: string = "alphaLowHigh";
   filterByGenre(clickedGenre) {
     this.selectedGenre = clickedGenre;
   }
   filterByArtist(clickedArtist) {
     this.selectedArtist = clickedArtist;
+  }
+  setBudget(targetBudget) {
+    this.budget = parseInt(targetBudget);
+    console.log(this.budget);
+  }
+  sortByProperty(selectedSort) {
+    this.propertyToSort = selectedSort;
   }
 }
